@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="X" type="Node2D"]
+scale = Vector2( 3, 3 )
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+margin_right = 8.0
+margin_bottom = 14.0
+text = "X"

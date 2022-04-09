@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Quadrant.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Main.gd" type="Script" id=2]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Lines" type="Node2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="Lines"]
+points = PoolVector2Array( 353, 36, 357, 557 )
+
+[node name="Line2D2" type="Line2D" parent="Lines"]
+position = Vector2( 304, 0 )
+points = PoolVector2Array( 353, 36, 357, 557 )
+
+[node name="Line2D3" type="Line2D" parent="Lines"]
+position = Vector2( 171, 225 )
+points = PoolVector2Array( -41, 169, 685, 160 )
+
+[node name="Line2D4" type="Line2D" parent="Lines"]
+position = Vector2( 161, 3 )
+points = PoolVector2Array( -41, 169, 685, 160 )
+
+[node name="Quadrants" type="Node2D" parent="."]
+
+[node name="Column" type="Node2D" parent="Quadrants"]
+
+[node name="Quadrant" parent="Quadrants/Column" instance=ExtResource( 1 )]
+position = Vector2( 216, 85 )
+
+[node name="Quadrant2" parent="Quadrants/Column" instance=ExtResource( 1 )]
+position = Vector2( 503, 88 )
+
+[node name="Quadrant3" parent="Quadrants/Column" instance=ExtResource( 1 )]
+position = Vector2( 797, 80 )
+
+[node name="Column2" type="Node2D" parent="Quadrants"]
+
+[node name="Quadrant4" parent="Quadrants/Column2" instance=ExtResource( 1 )]
+position = Vector2( 219, 277 )
+
+[node name="Quadrant5" parent="Quadrants/Column2" instance=ExtResource( 1 )]
+position = Vector2( 501, 273 )
+
+[node name="Quadrant6" parent="Quadrants/Column2" instance=ExtResource( 1 )]
+position = Vector2( 793, 276 )
+
+[node name="Column3" type="Node2D" parent="Quadrants"]
+
+[node name="Quadrant7" parent="Quadrants/Column3" instance=ExtResource( 1 )]
+position = Vector2( 216, 482 )
+
+[node name="Quadrant8" parent="Quadrants/Column3" instance=ExtResource( 1 )]
+position = Vector2( 525, 483 )
+
+[node name="Quadrant9" parent="Quadrants/Column3" instance=ExtResource( 1 )]
+position = Vector2( 807, 488 )
+
+[node name="ResetButton" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+rect_scale = Vector2( 3, 3 )
+text = "RESET"
+
+[connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]
